@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-function TwitterFollowCard({ formatUserName, userName, name, isFollowing }) {
+function TwitterFollowCard({ children, userName, isFollowing }) {
   return (
     <>
     <article className="tw-followCard">
@@ -9,8 +9,8 @@ function TwitterFollowCard({ formatUserName, userName, name, isFollowing }) {
           alt="Avatar" 
           src={`https://unavatar.io/soundcloud/${userName}`} />
         <div className="tw-followCard-info">
-          <strong>{name}</strong>
-          <span className="tw-followCard-infoUserName">{formatUserName(userName)}</span>
+          <strong>{children}</strong>
+          <span className="tw-followCard-infoUserName">@{userName}</span>
         </div>
       </header>
 
