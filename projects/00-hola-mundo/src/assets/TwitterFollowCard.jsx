@@ -1,5 +1,18 @@
+import { useState } from 'react'
+
 // eslint-disable-next-line react/prop-types
-function TwitterFollowCard({ children, userName, isFollowing }) {
+function TwitterFollowCard({ children, userName, initialIsFollowing}) {
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
+
+  const text = isFollowing ? 'Siguiendo' : 'Seguir'
+  const buttonClassName = isFollowing
+  ? 'tw-followCard-button is-following'
+  : 'tw-followCard-button'
+
+  const handleClick =() => {
+    setIsFollowing(!isFollowing)
+  }
+  
   return (
     <>
     <article className="tw-followCard">
@@ -15,8 +28,8 @@ function TwitterFollowCard({ children, userName, isFollowing }) {
       </header>
 
       <aside>
-        <button className="tw-followCard-button">
-          Seguir
+        <button className={buttonClassName} onClick={handleClick}>
+          {text}
         </button>
       </aside>
     </article>
