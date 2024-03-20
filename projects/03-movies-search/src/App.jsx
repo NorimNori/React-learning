@@ -47,16 +47,16 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='page'>
       <header>
         <h1>Movie searcher</h1>
       <form className='form' onSubmit={handleSubmit}>
         <input style={{ 
           border: '1px solid transparent', 
-          borderColor: error ? 'yellow' : 'transparent' 
+          borderColor: error ? 'red' : 'transparent' 
           }}onChange={ handleChange } value={search} name='query' placeholder='Rec, Paranormal activity, The blackwell ghost...' />
         <button type='submit'>Search</button>
-        {error && <p style={{ color: 'yellow' }}>{error}</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
       </header>
 
