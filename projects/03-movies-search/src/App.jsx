@@ -33,13 +33,13 @@ function useSearch () {
 
 
 function App() {
-  const { movies: mappedMovies } = useMovies()
   const { search, updateSearch, error} = useSearch()
+  const { movies: mappedMovies, getMovies } = useMovies({ search })
 
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log({ search })
+    getMovies()
   }
 
   const handleChange = (event) => {

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function ListOfMovies ({ movies }) {
     return (
         <ul className="movies">
@@ -14,7 +15,7 @@ function ListOfMovies ({ movies }) {
       )
 }
 
-function noMoviesResults () {
+function NoMoviesResults () {
     return (
         <p>There are no matches for your search</p>
     )
@@ -26,7 +27,7 @@ export function Movies ({ movies }) {
     return (
         hasMovies
         ?<ListOfMovies movies={movies} />
-        : <noMoviesResults />
+        : <NoMoviesResults />
     )
     
 

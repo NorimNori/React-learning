@@ -1,7 +1,6 @@
 h1{
   text-align: center;
 }
-
 main {
   display: flex;
   justify-content: center;
@@ -14,7 +13,6 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 800px;
 }
 
 .form {
@@ -34,4 +32,16 @@ main {
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-items: center;
+}
+.movie {
+  text-align: center;
+}
+
+.movie h3, .movie p {
+  margin: 0;
+}
+
+.movie img {
+  border-radius: 8px;
+  margin-top: 16px;
 }
