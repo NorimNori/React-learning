@@ -34,7 +34,7 @@ function useSearch () {
 
 function App() {
   const { search, updateSearch, error} = useSearch()
-  const { movies: mappedMovies, getMovies } = useMovies({ search })
+  const { movies, loading, getMovies } = useMovies({ search })
 
 
   const handleSubmit = (event) => {
@@ -61,7 +61,9 @@ function App() {
       </header>
 
       <main>
-        <Movies movies={mappedMovies} />
+        {
+          loading ? <p>Cargando...</p> : <Movies movies={movies} />
+        }
       </main>
      
     </div>
